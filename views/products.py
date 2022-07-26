@@ -1,14 +1,14 @@
 from flask import (
     Blueprint,
-    jsonify,
+    # jsonify,
     render_template,
-    abort,
+    # abort,
     request,
     redirect,
     url_for,
     flash,
 )
-from werkzeug.exceptions import BadRequest, NotFound
+from werkzeug.exceptions import NotFound
 
 from views.forms import ProductForm
 
@@ -75,4 +75,3 @@ def add_product():
     flash(f"Created new product: {product_name}", "success")
     url = url_for("products_app.details", product_id=product_id)
     return redirect(url)
-
